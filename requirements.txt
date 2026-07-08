@@ -1,0 +1,14 @@
+# judge-harness dependencies.
+#
+# The OFFLINE path (the metric CLI, the tests, the seeded mock judge) needs
+# NOTHING here — it is pure Python stdlib. You can run `python3 eval_cli.py`
+# and `python3 tests/test_judge.py` with a bare interpreter.
+#
+# These are for the Streamlit UI and the LIVE (Anthropic) judge only.
+
+streamlit>=1.30        # UI (app.py)
+anthropic>=0.40        # live judge backend (claude-haiku-4-5-20251001)
+pydantic>=2.0          # optional structured-verdict validation (live mode only)
+
+# Dev / CI:
+pytest>=7.0            # `python3 -m pytest` (the suite also runs without it)
